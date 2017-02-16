@@ -115,23 +115,21 @@
 	</body>
 </html>
 <script>
+	/* Remove this as it will be better to build the query from the params once that is sorted
 	$(function() {
 		updateTheQuery();
-	});
+	});*/
 	var uri = '/';
 	var querydata = '';
 	var method = "GET";
 	$("#apiform").on('keyup', '#uri', function() {
 		uri = $("#uri").val();
-		updateTheQuery();
 	});
 	$("#apiform").on('keyup', '#querydata', function() {
 		querydata = $("#querydata").val();
-		updateTheQuery();
 	});
 	$(".btn-method").on('click', function(e) {
 		method = $(this).attr("methodtype");
-		updateTheQuery();
 	});
 	$("#apiform").on('submit', function(e) {
 		e.preventDefault();
@@ -142,13 +140,8 @@
 		$("#btn-get").click();
 		uri = '/';
 		querydata = '';
-		updateTheQuery();
 		clearResults();
 	});
-	function updateTheQuery() {
-		query = '$.ajax({url: "' + uri + '",\n method:' + method + ',\n data:\n' + querydata + '\n,\nsuccess: function(result){}});'
-		$("#queryvisual").text(query);
-	}
 
 	function clearResults() {
 		$(".resultBlock").remove();
