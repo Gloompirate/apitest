@@ -85,16 +85,16 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="datatype">DataType</label>
 								<div class="btn-group col-md-offset-1 col-md-4" data-toggle="buttons">
-									<label class="btn btn-primary btn-datatype" datatype="json">
+									<label class="btn btn-primary btn-outline btn-datatype" datatype="json">
 										<input type="checkbox" autocomplete="off">JSON
 									</label>
-									<label class="btn btn-primary btn-datatype" datatype="html">
+									<label class="btn btn-primary btn-outline btn-datatype" datatype="html">
 										<input type="checkbox" autocomplete="off">HTML
 									</label>
-									<label class="btn btn-primary btn-datatype" datatype="script">
+									<label class="btn btn-primary btn-outline btn-datatype" datatype="script">
 										<input type="checkbox" autocomplete="off">SCRIPT
 									</label>
-									<label class="btn btn-primary btn-datatype" datatype="xml">
+									<label class="btn btn-primary btn-outline btn-datatype" datatype="xml">
 										<input type="checkbox" autocomplete="off">XML
 									</label>
 								</div>
