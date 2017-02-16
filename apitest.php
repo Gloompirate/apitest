@@ -83,6 +83,23 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label class="col-md-4 control-label" for="datatype">DataType</label>
+								<div class="btn-group col-md-offset-1 col-md-4" data-toggle="buttons">
+									<label class="btn btn-primary btn-datatype" datatype="json">
+										<input type="checkbox" autocomplete="off">JSON
+									</label>
+									<label class="btn btn-primary btn-datatype" datatype="html">
+										<input type="checkbox" autocomplete="off">HTML
+									</label>
+									<label class="btn btn-primary btn-datatype" datatype="script">
+										<input type="checkbox" autocomplete="off">SCRIPT
+									</label>
+									<label class="btn btn-primary btn-datatype" datatype="xml">
+										<input type="checkbox" autocomplete="off">XML
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
 								<label class="col-md-4 control-label" for="querydata">Query Data Input</label>
 								<div class="col-md-4">                     
 									<textarea class="form-control" id="querydata" name="querydata" placeholder="Query Data"></textarea>
