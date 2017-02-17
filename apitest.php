@@ -134,6 +134,12 @@
 									<label class="btn btn-info btn-checkbox btn-outline btn-datatype" datatype="xml">
 										<input type="checkbox" autocomplete="off">XML
 									</label>
+									<label class="btn btn-info btn-checkbox btn-outline btn-datatype" datatype="text">
+										<input type="checkbox" autocomplete="off">TEXT
+									</label>
+									<label class="btn btn-info btn-checkbox btn-outline btn-datatype" datatype="jsonp">
+										<input type="checkbox" autocomplete="off">JSONP
+									</label>
 								</div>
 							</div>
 							<div class="form-group">
