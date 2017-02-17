@@ -143,6 +143,15 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label class="control-label" for="auth">Authentication</label>
+								<div class="input-group">
+									<span class="input-group-addon">Username:</span>
+									<input id="usernameinput" type="text" class="form-control">
+									<span class="input-group-addon">Password:</span>
+									<input id="passwordinput" type="password" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
 								<label class="control-label" for="querydata">Query Data Input</label>
 								<div class="">                     
 									<textarea class="form-control" id="querydata" name="querydata" placeholder="Query Data"></textarea>
