@@ -66,19 +66,19 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-offset-2 col-sm-8">
 					<form class="form-horizontal" id="apiform">
 						<fieldset>
 							<legend class="text-center">API Tester</legend>
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="uri">API URI input</label>  
-								<div class="col-md-4">
+								<label class="control-label" for="uri">API URI input</label>  
+								<div class="">
 									<input id="uri" name="uri" type="text" placeholder="URI" class="form-control input-md">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="radios">Method</label>
-								<div class="btn-group col-md-offset-1 col-md-4" data-toggle="buttons">
+								<label class="control-label" for="method">Method</label>
+								<div class="btn-group col-md-offset-1 " data-toggle="buttons">
 									<label class="btn btn-success btn-outline btn-method active" methodtype="GET" id="btn-get">
 										<input type="radio" autocomplete="off" checked>GET
 									</label>
@@ -94,8 +94,34 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="datatype">DataType</label>
-								<div class="btn-group col-md-offset-1 col-md-4" data-toggle="buttons">
+								<label class="control-label" for="contenttype">ContentType</label>
+								<div class="btn-group col-md-offset-1 " data-toggle="buttons">
+									<label class="btn btn-info btn-outline btn-contenttype active" contenttype="default">
+										<input type="radio" autocomplete="off">DEFAULT
+									</label>
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="json">
+										<input type="radio" autocomplete="off">JSON
+									</label>
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="xml">
+										<input type="radio" autocomplete="off">XML
+									</label>
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="text">
+										<input type="radio" autocomplete="off">TEXT
+									</label>
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="formdata">
+										<input type="radio" autocomplete="off">FORM-DATA
+									</label>
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="binary">
+										<input type="radio" autocomplete="off">BINARY
+									</label>
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="none">
+										<input type="radio" autocomplete="off">NONE
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="datatype">DataType</label>
+								<div class="btn-group col-md-offset-1 " data-toggle="buttons">
 									<label class="btn btn-info btn-checkbox btn-outline btn-datatype" datatype="json">
 										<input type="checkbox" autocomplete="off">JSON
 									</label>
@@ -111,13 +137,13 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="querydata">Query Data Input</label>
-								<div class="col-md-4">                     
+								<label class="control-label" for="querydata">Query Data Input</label>
+								<div class="">                     
 									<textarea class="form-control" id="querydata" name="querydata" placeholder="Query Data"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<div class="col-md-offset-5 col-md-4">
+								<div class="">
 									<button id="btn-submit" name="btn-submit" class="btn btn-success">Submit</button>
 									<button id="btn-reset" name="btn-reset" class="btn btn-danger" type="reset">Reset</button>
 								</div>
@@ -126,7 +152,7 @@
 					</form>
 				</div>
 			</div> 
-			<div class="col-md-offset-2 col-md-8">
+			<div class="col-sm-offset-2 col-sm-8">
 				<label class="control-label" for="queryvisual">Query Visual</label> 
 				<div class="well" id="queryvisual" style="white-space: pre-line;">
 				Query Visual goes here
