@@ -99,7 +99,7 @@
 							<div class="form-group">
 								<label class="control-label" for="contenttype">ContentType</label>
 								<div class="btn-group col-md-offset-1 " data-toggle="buttons">
-									<label class="btn btn-info btn-outline btn-contenttype active" contenttype="default">
+									<label class="btn btn-info btn-outline btn-contenttype active" contenttype="default" id="btn-contenttype-default">
 										<input type="radio" autocomplete="off">DEFAULT
 									</label>
 									<label class="btn btn-info btn-outline btn-contenttype" contenttype="json">
@@ -194,6 +194,7 @@
 	var uri = '/';
 	var querydata = '';
 	var method = "GET";
+	var contenttype = "";
 	$("#apiform").on('keyup', '#uri', function() {
 		uri = $("#uri").val();
 	});
@@ -206,6 +207,31 @@
 	$(".btn-datatype").on('click', function(e) {
 		datatype = $(this).attr("datatype");
 	});
+	$(".btn-contenttype").on('click', function(e) {
+		switch($(this).attr("contenttype")) {
+			case "default":
+				contenttype = "";
+				break;
+			case "json":
+				contenttype = "";
+				break;
+			case "xml":
+				contenttype = "";
+				break;
+			case "text":
+				contenttype = "";
+				break;
+			case "formdata":
+				contenttype = "";
+				break;
+			case "binary":
+				contenttype = "";
+				break;
+			case "none":
+				contenttype = "";
+				break;
+		}
+	});
 	$("#apiform").on('submit', function(e) {
 		e.preventDefault();
 		clearResults();
@@ -213,6 +239,7 @@
 	});
 	$('#apiform').on('reset', function(e) {
 		$("#btn-get").click();
+		$('#btn-contenttype-default').click();
 		uri = '/';
 		querydata = '';
 		clearResults();
@@ -228,7 +255,8 @@
 		    type: method,
 		    url: uri,
 		    data: querydata,
-		    //dataType: "JSON",
+		    contentType: contenttype,
+		    datatype: datatype,
 		    success: function(results, textStatus, jqXHR){
 		    	$("#resultvisual").css("background-color","lightgreen");
 		    	var resultBlock = '<details class="resultBlock"><summary>Returned Data:</summary>' + results + '</details>';
