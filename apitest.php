@@ -210,22 +210,22 @@
 	$(".btn-contenttype").on('click', function(e) {
 		switch($(this).attr("contenttype")) {
 			case "default":
-				contenttype = "";
+				contenttype = "application/x-www-form-urlencoded; charset=UTF-8";
 				break;
 			case "json":
-				contenttype = "";
+				contenttype = "application/json";
 				break;
 			case "xml":
-				contenttype = "";
+				contenttype = "text/xml";
 				break;
 			case "text":
-				contenttype = "";
+				contenttype = "text/plain";
 				break;
 			case "formdata":
-				contenttype = "";
+				contenttype = "multipart/form-data";
 				break;
 			case "binary":
-				contenttype = "";
+				contenttype = "application/octet-stream";
 				break;
 			case "none":
 				contenttype = "";
