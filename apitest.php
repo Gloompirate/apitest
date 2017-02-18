@@ -195,7 +195,7 @@
 	var querydata = '';
 	var method = "GET";
 	var contenttype = "application/x-www-form-urlencoded";
-	var datatype = "";
+	var datatype = [];
 	$("#apiform").on('keyup', '#uri', function() {
 		uri = $("#uri").val();
 	});
@@ -206,7 +206,12 @@
 		method = $(this).attr("methodtype");
 	});
 	$(".btn-datatype").on('click', function(e) {
-		datatype = $(this).attr("datatype");
+		var index = datatype.indexOf($(this).attr("datatype"));
+		if(index === -1) {
+			datatype.push($(this).attr("datatype"));
+		} else {
+			datatype.splice(index, 1);
+		}
 	});
 	$(".btn-contenttype").on('click', function(e) {
 		contenttype = $(this).attr("contenttype");
@@ -217,6 +222,7 @@
 		testIt();
 	});
 	$('#apiform').on('reset', function(e) {
+		//need to add something to reset the checkboxes
 		$("#btn-get").click();
 		$('#btn-contenttype-default').click();
 		uri = '/';
@@ -235,7 +241,6 @@
 		    url: uri,
 		    data: querydata,
 		    contentType: contenttype,
-		    datatype: datatype,
 		    success: function(results, textStatus, jqXHR){
 		    	$("#resultvisual").css("background-color","lightgreen");
 		    	var resultBlock = '<details class="resultBlock"><summary>Returned Data:</summary>' + results + '</details>';
@@ -260,7 +265,10 @@
 				"Authorization": "Basic " + btoa($('#usernameinput').val() + ":" + $('#passwordinput').val())
 			};
 		}
-		console.log(params);
+		if (datatype != "") {
+			params.dataType = datatype.join(" ");
+		}
+		console.log(params;
 		//$.ajax(params);
 	}
 </script>
