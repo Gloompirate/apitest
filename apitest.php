@@ -88,6 +88,9 @@
 									<label class="btn btn-warning btn-outline btn-method" methodtype="PUT">
 										<input type="radio" autocomplete="off">PUT
 									</label>
+									<label class="btn btn-primary btn-outline btn-method" methodtype="PATCH">
+										<input type="radio" autocomplete="off">PATCH
+									</label>
 									<label class="btn btn-danger btn-outline btn-method" methodtype="DELETE">
 										<input type="radio" autocomplete="off">DELETE
 									</label>
@@ -200,6 +203,9 @@
 	$(".btn-method").on('click', function(e) {
 		method = $(this).attr("methodtype");
 	});
+	$(".btn-datatype").on('click', function(e) {
+		datatype = $(this).attr("datatype");
+	});
 	$("#apiform").on('submit', function(e) {
 		e.preventDefault();
 		clearResults();
@@ -222,7 +228,7 @@
 		    type: method,
 		    url: uri,
 		    data: querydata,
-		    contentType: "application/json; charset=utf-8",
+		    //dataType: "JSON",
 		    success: function(results, textStatus, jqXHR){
 		    	$("#resultvisual").css("background-color","lightgreen");
 		    	var resultBlock = '<details class="resultBlock"><summary>Returned Data:</summary>' + results + '</details>';
