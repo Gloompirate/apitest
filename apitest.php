@@ -194,7 +194,8 @@
 	var uri = '/';
 	var querydata = '';
 	var method = "GET";
-	var contenttype = "";
+	var contenttype = "application/x-www-form-urlencoded";
+	var datatype = "";
 	$("#apiform").on('keyup', '#uri', function() {
 		uri = $("#uri").val();
 	});
@@ -208,7 +209,7 @@
 		datatype = $(this).attr("datatype");
 	});
 	$(".btn-contenttype").on('click', function(e) {
-		contentype = $(this).attr("contenttype");
+		contenttype = $(this).attr("contenttype");
 	});
 	$("#apiform").on('submit', function(e) {
 		e.preventDefault();
@@ -254,6 +255,12 @@
 		    	$("#resultvisual").prepend(ajaxBlock); 
 		    }
 		};
-		$.ajax(params);
+		if ($('#usernameinput').val() != "") {
+			params.headers = {
+				"Authorization": "Basic " + btoa($('#usernameinput').val() + ":" + $('#passwordinput').val())
+			};
+		}
+		console.log(params);
+		//$.ajax(params);
 	}
 </script>
