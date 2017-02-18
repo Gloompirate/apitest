@@ -99,25 +99,25 @@
 							<div class="form-group">
 								<label class="control-label" for="contenttype">ContentType</label>
 								<div class="btn-group col-md-offset-1 " data-toggle="buttons">
-									<label class="btn btn-info btn-outline btn-contenttype active" contenttype="default" id="btn-contenttype-default">
+									<label class="btn btn-info btn-outline btn-contenttype active" contenttype="application/x-www-form-urlencoded" id="btn-contenttype-default">
 										<input type="radio" autocomplete="off">DEFAULT
 									</label>
-									<label class="btn btn-info btn-outline btn-contenttype" contenttype="json">
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="application/json">
 										<input type="radio" autocomplete="off">JSON
 									</label>
-									<label class="btn btn-info btn-outline btn-contenttype" contenttype="xml">
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="text/xml">
 										<input type="radio" autocomplete="off">XML
 									</label>
-									<label class="btn btn-info btn-outline btn-contenttype" contenttype="text">
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="text/plain">
 										<input type="radio" autocomplete="off">TEXT
 									</label>
-									<label class="btn btn-info btn-outline btn-contenttype" contenttype="formdata">
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="multipart/form-data">
 										<input type="radio" autocomplete="off">FORM-DATA
 									</label>
-									<label class="btn btn-info btn-outline btn-contenttype" contenttype="binary">
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="application/octet-stream">
 										<input type="radio" autocomplete="off">BINARY
 									</label>
-									<label class="btn btn-info btn-outline btn-contenttype" contenttype="none">
+									<label class="btn btn-info btn-outline btn-contenttype" contenttype="">
 										<input type="radio" autocomplete="off">NONE
 									</label>
 								</div>
@@ -208,29 +208,7 @@
 		datatype = $(this).attr("datatype");
 	});
 	$(".btn-contenttype").on('click', function(e) {
-		switch($(this).attr("contenttype")) {
-			case "default":
-				contenttype = "application/x-www-form-urlencoded; charset=UTF-8";
-				break;
-			case "json":
-				contenttype = "application/json";
-				break;
-			case "xml":
-				contenttype = "text/xml";
-				break;
-			case "text":
-				contenttype = "text/plain";
-				break;
-			case "formdata":
-				contenttype = "multipart/form-data";
-				break;
-			case "binary":
-				contenttype = "application/octet-stream";
-				break;
-			case "none":
-				contenttype = "";
-				break;
-		}
+		contentype = $(this).attr("contenttype");
 	});
 	$("#apiform").on('submit', function(e) {
 		e.preventDefault();
