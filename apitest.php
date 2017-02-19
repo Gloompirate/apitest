@@ -265,7 +265,7 @@
 		if (datatype != "") {
 			params.dataType = datatype.join(" ");
 		}
-		console.log(params);
-		$.ajax(params);
+		console.log(params;
+		//$.ajax(params);
 	}
 </script>
