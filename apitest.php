@@ -243,14 +243,12 @@
 		    data: querydata,
 		    contentType: contenttype,
 		    success: function(results, textStatus, jqXHR){
-		    	$("#resultvisual").append('<span class="resultBlock">Success! HTTP Code: ' + jqXHR.status + ' : ''</span>');
+		    	$("#resultvisual").append('<span class="resultBlock">Success! HTTP Code: ' + jqXHR.status + ' ' + jqXHR.statusText + '</span>');
 		    	$("#resultvisual").css("background-color","lightgreen");
 		    },
 		    error: function(jqXHR, textStatus, errorThrown){
-		    	$("#resultvisual").append('<class="resultBlock">Error! HTTP Code: ' + jqXHR.status + ' : </span>');
+		    	$("#resultvisual").append('<span class="resultBlock">Error! HTTP Code: ' + jqXHR.status + ' ' + errorThrown + '</span>');
 		    	$("#resultvisual").css("background-color","pink");
-		    	var errorBlock = '<details class="resultBlock"><summary>Error Thrown:</summary>' + errorThrown + '</details>';
-		    	$("#resultvisual").append(errorBlock);
 		    },
 		    complete: function(jqXHR, textStatus) {
 		    	var responseTextBlock = '<details class="resultBlock"><summary>Response Text:</summary>' + jqXHR.responseText + '</details>';
