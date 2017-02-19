@@ -242,22 +242,19 @@
 		    data: querydata,
 		    contentType: contenttype,
 		    success: function(results, textStatus, jqXHR){
+		    	$("#resultvisual").append('<span class="resultBlock">Success! HTTP Code: ' + jqXHR.status + ' : ' + jqXHR.responseText + '</span>');
 		    	$("#resultvisual").css("background-color","lightgreen");
-		    	var resultBlock = '<details class="resultBlock"><summary>Returned Data:</summary>' + results + '</details>';
-		    	$("#resultvisual").append(resultBlock);
 		    },
 		    error: function(jqXHR, textStatus, errorThrown){
+		    	$("#resultvisual").append('<class="resultBlock">Error! HTTP Code: ' + jqXHR.status + ' : ' + textStatus +'</span>');
 		    	$("#resultvisual").css("background-color","pink");
 		    	var errorBlock = '<details class="resultBlock"><summary>Error Thrown:</summary>' + errorThrown + '</details>';
 		    	$("#resultvisual").append(errorBlock);
 		    },
 		    complete: function(jqXHR, textStatus) {
-		    	var ajaxBlock = '<details class="resultBlock"><summary>AJAX Query Result:</summary>' + textStatus + '</details>';
-		    	var statusBlock = '<details class="resultBlock"><summary>HTTP Status Code:</summary>' + jqXHR.status + '</details>';
 		    	var responseTextBlock = '<details class="resultBlock"><summary>Response Text:</summary>' + jqXHR.responseText + '</details>';
 		    	var responseHeaderBlock = '<details class="resultBlock"><summary>Response Headers:</summary>' + jqXHR.getAllResponseHeaders() + '</details>';
-		    	$("#resultvisual").append(statusBlock + responseTextBlock + responseHeaderBlock);
-		    	$("#resultvisual").prepend(ajaxBlock); 
+		    	$("#resultvisual").append(responseTextBlock + responseHeaderBlock);
 		    }
 		};
 		if ($('#usernameinput').val() != "") {
