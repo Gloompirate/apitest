@@ -187,6 +187,15 @@
 	</body>
 </html>
 <script>
+/*
+TO DO:
+	Fix form layout
+	Make checkboxes reset on reset
+	make or get rid of query visual
+	preitify response text, probably just for JSON
+	make this just a js file
+	option for no bootstrap
+ */
 	/* Remove this as it will be better to build the query from the params once that is sorted
 	$(function() {
 		updateTheQuery();
